@@ -12,3 +12,14 @@
   </div>
   
 </ul>
+
+
+<% @parse['matches'].each do |f| %>
+<%= f %>
+<li><%=link_to f['recipeName'], "http://www.yummly.com/recipe/#{f['id']}"%></li>
+<li><%= f['ingredients'] %></li>
+<%= a href = "smallImageUrls" %>
+<%end%>
+
+
+
