@@ -2,7 +2,6 @@
 
  <ul class="nav nav-pills">
   <li><%= link_to('New Ingredient', new_ingredient_path) %></li>
-  <li><%= link_to('Edit Ingredient', edit_ingredient_path(@ingredient)) %></li>
   <li><%= link_to('Delete Ingredient', @ingredient, :method => :delete, :confirm => 'Are you sure?') %></li>
 </ul>
 
