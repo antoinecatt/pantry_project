@@ -10,7 +10,7 @@ class IngredientsController < ApplicationController
 
   def create
     ingredient = Ingredient.create(ingredient_params)
-    ingredient.save
+    
     redirect_to ingredient
   end
 
@@ -31,6 +31,7 @@ class IngredientsController < ApplicationController
     response = Typhoeus.get("http://api.yummly.com/v1/api/recipe/#{@id}?_app_id=ffdd32f5&_app_key=dd268f25fe5a30f7c1821def3698bf46")
     #binding.pry
     @detail = JSON.parse(response.body)
+    
   end
 
   private

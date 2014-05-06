@@ -10,9 +10,8 @@
 <li><%=f%></li>
 	<%end%>
 
-	<% @detail['source'].each do |f| %>
-<li><%=f[1]%></li>
-	<%end%>
+	<%=@detail['source']['sourceRecipeUrl']%>
+
 
 <li><%= link_to('Back', new_ingredient_path) %></li>
 	
