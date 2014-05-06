@@ -1,0 +1,18 @@
+
+
+<% @detail['images'].each do |f| %>
+<img src="<%= f['hostedLargeUrl'] %>"</img>
+	<%end%>
+
+
+
+<% @detail['ingredientLines'].each do |f| %>
+<li><%=f%></li>
+	<%end%>
+
+	<% @detail['source'].each do |f| %>
+<li><%=f[1]%></li>
+	<%end%>
+
+<li><%= link_to('Back', new_ingredient_path) %></li>
+	

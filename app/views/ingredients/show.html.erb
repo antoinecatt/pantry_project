@@ -1,28 +1,30 @@
 
 
- <ul class="nav nav-pills">
-  <li><%= link_to('New Ingredient', new_ingredient_path) %></li>
-  <li><%= link_to('Delete Ingredient', @ingredient, :method => :delete, :confirm => 'Are you sure?') %></li>
-</ul>
+
+
+<h1>Results</h1>
+
 
 <div class="row">
   <div class="col-md-3 col-sm-3">
    <p class="lead"><%= @ingredient.name %>
    <p>
   </div>
-  
-</ul>
-
 
 <% @parse['matches'].each do |f| %>
-Results
+<%= f%>
 
 <li><img src="<%= f['smallImageUrls'][0] %>"</img></li>
-<li><%=link_to f['recipeName'], "http://www.yummly.com/recipe/#{f['id']}"%></li>
+<li><%=link_to f['recipeName'], "/details/#{f['id']}"%></li>
 
 
 
 <%end%>
 
+ <ul class="nav nav-pills">
+  <li><%= link_to('New Ingredient', new_ingredient_path) %></li>
+</ul>
 
+
+</ul>
 
