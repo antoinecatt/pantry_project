@@ -15,10 +15,13 @@
 
 
 <% @parse['matches'].each do |f| %>
-<%= f %>
+Results
+
+<li><img src="<%= f['smallImageUrls'][0] %>"</img></li>
 <li><%=link_to f['recipeName'], "http://www.yummly.com/recipe/#{f['id']}"%></li>
-<li><%= f['ingredients'] %></li>
-<%= a href = "smallImageUrls" %>
+
+
+
 <%end%>
 
 

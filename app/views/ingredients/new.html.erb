@@ -5,7 +5,7 @@
 <%= form_for @ingredient do |f| %>
   <%= f.label :Ingredient %>
   <%= f.text_field :name %>
-  <%= f.submit %>
+  <%= f.submit 'Search Recipes' %>
 <% end %>
 
 <li><%=link_to('Show Recent Pantry', ingredients_path) %></li>
