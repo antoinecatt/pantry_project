@@ -2,10 +2,14 @@ class IngredientsController < ApplicationController
   
   def new
     @ingredient = Ingredient.new
+   
   end
 
   def index
     @ingredients = Ingredient.all
+     if user_signed_in?
+      redirect_to :controller=>'ingredients', :action =>'new'
+    end
   end
 
   def create

@@ -1,5 +1,7 @@
 Pantry::Application.routes.draw do
-root 'ingredients#new'
+devise_for :users
+root to: "ingredients#index"
+#root 'ingredients#new'
 resources :ingredients
 get '/details/:id' => 'ingredients#details'
 end
