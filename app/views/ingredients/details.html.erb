@@ -10,7 +10,7 @@
 <li><%=f%></li>
 	<%end%>
 
-	<%=@detail['source']['sourceRecipeUrl']%>
+	<%=link_to (@detail['source']['sourceRecipeUrl']) %>
 
 
 <li><%= link_to('Back', new_ingredient_path) %></li>
