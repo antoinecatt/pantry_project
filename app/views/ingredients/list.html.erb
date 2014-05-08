@@ -1,0 +1,10 @@
+
+
+<% @recipes['matches'].each do |f| %>
+
+
+<li><%=link_to f['recipeName'], "/details/#{f['id']}" %></li>
+	<%end%>
+	<li><%= link_to 'Back', new_ingredient_path, :class => "btn btn-primary"%></li>
+
+	

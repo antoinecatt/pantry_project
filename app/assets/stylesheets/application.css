@@ -5,12 +5,18 @@
  */
 
 body {
-	text-align: center
+	background: url("http://d1l6lhgof63zdh.cloudfront.net/aol-office-ldWDQOq0ec-full-width.jpg");
+	background-size: cover;
+	text-align: center;
+	
+	
 }
 
-
+div {
+	padding: 2.5%;
+}
 
 li {
 	list-style: none;
-	text-align: center;	
+	margin: 15px;
 }
