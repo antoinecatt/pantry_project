@@ -1,4 +1,11 @@
-/* *= require bootstrap.min.css*/
+
+
+
+/*
+
+*= require bootstrap.min.css
+*= require_tree .
+*/
 
 body {
 	text-align: center
@@ -8,5 +15,5 @@ body {
 
 li {
 	list-style: none;
-	
+	text-align: center;	
 }

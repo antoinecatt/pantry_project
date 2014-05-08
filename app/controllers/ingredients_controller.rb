@@ -23,12 +23,8 @@ class IngredientsController < ApplicationController
      @ingredient = Ingredient.find(params[:id])
      response = Typhoeus.get("http://api.yummly.com/v1/api/recipes?_app_id=ffdd32f5&_app_key=dd268f25fe5a30f7c1821def3698bf46&allowedIngredient[]=#{@ingredient.name}")
      @parse = JSON.parse(response.body)
-  end
-
-  def destroy
-    ingredient = Ingredient.find(params[:id])
-    ingredient.delete
-    redirect_to ingredients_path
+     size = @parse['matches'].size
+     @recipe = @parse['matches'][rand(size)]
   end
 
   def details
