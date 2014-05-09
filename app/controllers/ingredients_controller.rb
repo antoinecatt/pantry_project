@@ -20,11 +20,12 @@ class IngredientsController < ApplicationController
 
   def show
      @ingredient = Ingredient.find(params[:id])
-     response = Typhoeus.get("http://api.yummly.com/v1/api/recipes?_app_id=ffdd32f5&_app_key=dd268f25fe5a30f7c1821def3698bf46&allowedIngredient[]=#{@ingredient.name}")
+     @string = (@ingredient.name).gsub(/ /, '%2C+')
+     response = Typhoeus.get("http://api.yummly.com/v1/api/recipes?_app_id=ffdd32f5&_app_key=dd268f25fe5a30f7c1821def3698bf46&q=#{@string}")
      @parse = JSON.parse(response.body)
      size = @parse['matches'].size
      @recipe = @parse['matches'][rand(size)]
-     
+     #binding.pry
   end
 
   def details
@@ -37,11 +38,13 @@ class IngredientsController < ApplicationController
 
   def list
     @ingredient_name = params[:name]
+    @string = (@ingredient_name).gsub(/ /, '%2C+')
     # @ingredient = Ingredient.find(params[:id])
      # response = Typhoeus.get("http://api.yummly.com/v1/api/recipes?_app_id=ffdd32f5&_app_key=dd268f25fe5a30f7c1821def3698bf46&allowedIngredient[]=#{@ingredient.name}")
-     response = Typhoeus.get("http://api.yummly.com/v1/api/recipes?_app_id=ffdd32f5&_app_key=dd268f25fe5a30f7c1821def3698bf46&allowedIngredient[]=#{@ingredient_name}")
-    
+     response = Typhoeus.get("http://api.yummly.com/v1/api/recipes?_app_id=ffdd32f5&_app_key=dd268f25fe5a30f7c1821def3698bf46&q=#{@string}")
+
      @recipes = JSON.parse(response.body)
+    
   end
 
   private

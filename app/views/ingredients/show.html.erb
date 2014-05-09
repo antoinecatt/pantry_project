@@ -5,20 +5,17 @@
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
-<h1>Results</h1>
 
 
-<div>
+
+
   <div>
-   <h2><%= @ingredient.name %></h2>
+   <h1>Results for <%= @ingredient.name %></h1>
   </div>
 
+<li><img src="<%= @recipe['smallImageUrls'][0]%>"</img></li>
 
-
-
-<li><img src="<%= @recipe['smallImageUrls'][0] %>"</img></li>
-
-<li><%=link_to @recipe['recipeName'], "/details/#{@recipe['id']}", :class => "btn btn-primary" %></li>
+<li><%=link_to @recipe['recipeName'], "/details/#{@recipe['id']}"%></li>
 
 <li><%=link_to "View other recipes", "/list/#{@ingredient.name}", :class => "btn btn-primary" %></li>
 
@@ -33,7 +30,7 @@
 </ul>
 
 		
-		</div>
+		
   </div>
   </div>
 </div>
