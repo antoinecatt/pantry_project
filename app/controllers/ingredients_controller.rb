@@ -42,7 +42,6 @@ class IngredientsController < ApplicationController
     # @ingredient = Ingredient.find(params[:id])
      # response = Typhoeus.get("http://api.yummly.com/v1/api/recipes?_app_id=ffdd32f5&_app_key=dd268f25fe5a30f7c1821def3698bf46&allowedIngredient[]=#{@ingredient.name}")
      response = Typhoeus.get("http://api.yummly.com/v1/api/recipes?_app_id=ffdd32f5&_app_key=dd268f25fe5a30f7c1821def3698bf46&q=#{@string}")
-
      @recipes = JSON.parse(response.body)
     
   end

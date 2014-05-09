@@ -4,7 +4,11 @@
   <div class="modal-content">
       <div class="modal-header">
 
+
+
+
 <% @detail['images'].each do |f| %>
+
 <img src="<%= f['hostedLargeUrl'] %>"></img>
 	<%end%>
 
@@ -13,7 +17,8 @@
 <% @detail['ingredientLines'].each do |f| %>
 <li><%=f%></li>
 	<%end%>
-	<%=link_to 'Get Recipe', @detail['source']['sourceRecipeUrl'] %>
+
+<%=link_to 'Get Recipe', @detail['source']['sourceRecipeUrl'] %>
 
 
 
