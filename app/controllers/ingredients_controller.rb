@@ -1,6 +1,13 @@
 class IngredientsController < ApplicationController
   before_filter :authenticate_user!
   
+ def search
+    @search = SimpleSearch.new SimpleSearch.get_params(params)
+    if @search.valid?
+      @ingredients = @search.search_within Ingredient.all, :name
+    end
+  end
+
   def new
     @ingredient = Ingredient.new
   end

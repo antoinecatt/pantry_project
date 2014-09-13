@@ -1,0 +1,16 @@
+
+<div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+
+<h1>Here's a list of other dishes you might like to try!</h1>
+<% @recipes['matches'].each do |f| %>
+
+<li><%=link_to f['recipeName'], "/details/#{f['id']}" %></li>
+	<%end%>
+	<li><%= link_to 'Back', new_ingredient_path, :class => "btn btn-primary"%></li>
+	  </div>
+ 	</div>
+ </div>
+
+	
